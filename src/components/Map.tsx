@@ -19,8 +19,8 @@ const Map = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [118.0148634, -2.548926], // Center of Indonesia
-      zoom: 4.5,
+      center: [95.3238, 5.5483], // Center of Aceh
+      zoom: 8.5,
     });
 
     map.current.addControl(

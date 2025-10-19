@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wrench, Search, Clock, MapPin } from "lucide-react";
-import Map from "@/components/Map";
+import { Wrench, Search, Clock } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
@@ -217,21 +216,6 @@ const UserDashboard = () => {
             </Card>
           </div>
         </div>
-
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              Peta Teknisi di Indonesia
-            </CardTitle>
-            <CardDescription>Lokasi teknisi terverifikasi di seluruh Indonesia</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[500px] w-full">
-              <Map />
-            </div>
-          </CardContent>
-        </Card>
       </main>
     </div>
   );

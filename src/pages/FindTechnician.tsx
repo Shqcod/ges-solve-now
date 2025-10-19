@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Star, DollarSign, ArrowLeft } from "lucide-react";
+import Map from "@/components/Map";
 
 const technicians = [
   {
@@ -66,6 +67,21 @@ const FindTechnician = () => {
           <h2 className="text-3xl font-bold mb-2">Teknisi Tersedia</h2>
           <p className="text-muted-foreground">Pilih teknisi terbaik untuk kebutuhan Anda</p>
         </div>
+
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <MapPin className="h-5 w-5" />
+              Peta Teknisi di Aceh
+            </CardTitle>
+            <CardDescription>Lokasi teknisi terverifikasi di wilayah Aceh</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-[400px] w-full">
+              <Map />
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technicians.map((tech) => (
