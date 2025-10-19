@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Star, DollarSign } from "lucide-react";
+import { MapPin, Star, DollarSign, ArrowLeft } from "lucide-react";
 
 const technicians = [
   {
@@ -55,6 +55,14 @@ const FindTechnician = () => {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate("/user-dashboard")}
+            className="mb-4"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Kembali ke Dashboard
+          </Button>
           <h2 className="text-3xl font-bold mb-2">Teknisi Tersedia</h2>
           <p className="text-muted-foreground">Pilih teknisi terbaik untuk kebutuhan Anda</p>
         </div>
