@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wrench, Search, Clock, MapPin } from "lucide-react";
 import Map from "@/components/Map";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -49,23 +50,44 @@ const UserDashboard = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="device">Jenis Perangkat</Label>
-                  <Input
-                    id="device"
-                    placeholder="Laptop, HP, PC, dll"
-                    value={formData.device}
-                    onChange={(e) => setFormData({...formData, device: e.target.value})}
-                    required
-                  />
+                  <Select value={formData.device} onValueChange={(value) => setFormData({...formData, device: value})} required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Pilih jenis perangkat" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Laptop">Laptop</SelectItem>
+                      <SelectItem value="HP">HP / Smartphone</SelectItem>
+                      <SelectItem value="PC">PC / Komputer</SelectItem>
+                      <SelectItem value="Tablet">Tablet</SelectItem>
+                      <SelectItem value="Printer">Printer</SelectItem>
+                      <SelectItem value="Kamera">Kamera</SelectItem>
+                      <SelectItem value="Lainnya">Lainnya</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="brand">Merek</Label>
-                  <Input
-                    id="brand"
-                    placeholder="Apple, Samsung, Asus, dll"
-                    value={formData.brand}
-                    onChange={(e) => setFormData({...formData, brand: e.target.value})}
-                    required
-                  />
+                  <Select value={formData.brand} onValueChange={(value) => setFormData({...formData, brand: value})} required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Pilih merek" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Apple">Apple</SelectItem>
+                      <SelectItem value="Samsung">Samsung</SelectItem>
+                      <SelectItem value="Asus">Asus</SelectItem>
+                      <SelectItem value="Lenovo">Lenovo</SelectItem>
+                      <SelectItem value="HP">HP</SelectItem>
+                      <SelectItem value="Dell">Dell</SelectItem>
+                      <SelectItem value="Acer">Acer</SelectItem>
+                      <SelectItem value="Xiaomi">Xiaomi</SelectItem>
+                      <SelectItem value="Oppo">Oppo</SelectItem>
+                      <SelectItem value="Vivo">Vivo</SelectItem>
+                      <SelectItem value="Realme">Realme</SelectItem>
+                      <SelectItem value="Canon">Canon</SelectItem>
+                      <SelectItem value="Epson">Epson</SelectItem>
+                      <SelectItem value="Lainnya">Lainnya</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="problem">Deskripsi Masalah</Label>
@@ -79,13 +101,27 @@ const UserDashboard = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="location">Lokasi</Label>
-                  <Input
-                    id="location"
-                    placeholder="Kota/Daerah Anda"
-                    value={formData.location}
-                    onChange={(e) => setFormData({...formData, location: e.target.value})}
-                    required
-                  />
+                  <Select value={formData.location} onValueChange={(value) => setFormData({...formData, location: value})} required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Pilih lokasi" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Aceh">Aceh</SelectItem>
+                      <SelectItem value="Medan">Medan</SelectItem>
+                      <SelectItem value="Padang">Padang</SelectItem>
+                      <SelectItem value="Pekanbaru">Pekanbaru</SelectItem>
+                      <SelectItem value="Palembang">Palembang</SelectItem>
+                      <SelectItem value="Jakarta">Jakarta</SelectItem>
+                      <SelectItem value="Bandung">Bandung</SelectItem>
+                      <SelectItem value="Semarang">Semarang</SelectItem>
+                      <SelectItem value="Yogyakarta">Yogyakarta</SelectItem>
+                      <SelectItem value="Surabaya">Surabaya</SelectItem>
+                      <SelectItem value="Malang">Malang</SelectItem>
+                      <SelectItem value="Denpasar">Denpasar</SelectItem>
+                      <SelectItem value="Makassar">Makassar</SelectItem>
+                      <SelectItem value="Manado">Manado</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <Button type="submit" className="w-full">
                   <Search className="h-4 w-4 mr-2" />
