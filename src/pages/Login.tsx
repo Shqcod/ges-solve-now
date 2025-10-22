@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,6 +15,11 @@ const Login = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    toast({
+      title: "Login Berhasil",
+      description: "Selamat datang kembali!",
+    });
     
     if (userType === "admin") {
       navigate("/admin");
@@ -25,7 +32,16 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+      <div className="w-full max-w-md">
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/")}
+          className="mb-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Kembali ke Home
+        </Button>
+        <Card className="w-full">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Login ke GES</CardTitle>
           <CardDescription className="text-center">
@@ -81,6 +97,7 @@ const Login = () => {
           </div>
         </CardContent>
       </Card>
+      </div>
     </div>
   );
 };
